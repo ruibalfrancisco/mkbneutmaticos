@@ -1,0 +1,152 @@
+.page {
+  padding: 2rem 0 4rem;
+  min-height: 60vh;
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageTitle {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+}
+
+.pageSubtitle {
+  color: var(--color-gray-500);
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+}
+
+/* ── Section per type ───────────────────────── */
+.typeSection {
+  margin-bottom: 3rem;
+}
+
+.typeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding: 0 0.25rem;
+}
+
+.typeTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.typeBadge {
+  background: var(--color-badge-offer);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 99px;
+  letter-spacing: 0.3px;
+}
+
+.sliderControls {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.sliderBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-gray-200);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-gray-500);
+  transition: all 0.2s ease;
+}
+
+.sliderBtn:hover {
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+  background: var(--color-brand-light, #fff5f5);
+}
+
+.sliderBtn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ── Horizontal slider track ────────────────── */
+.sliderTrack {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0.25rem 1rem;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sliderTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.sliderTrack > * {
+  scroll-snap-align: start;
+  flex: 0 0 280px;
+  min-width: 280px;
+}
+
+/* ── Empty / loading ────────────────────────── */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 1rem;
+  color: var(--color-gray-500);
+}
+
+.spinner {
+  animation: spin 1.5s linear infinite;
+  color: var(--color-brand);
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--color-gray-500);
+}
+
+.emptyIcon {
+  color: var(--color-gray-300);
+  margin-bottom: 1rem;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+
+  .sliderTrack > * {
+    flex: 0 0 260px;
+    min-width: 260px;
+  }
+}

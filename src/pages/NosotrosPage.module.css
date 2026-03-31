@@ -1,0 +1,241 @@
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 40vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(17,24,39,0.7), rgba(17,24,39,0.9));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 1.5rem;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+}
+
+/* Common Section */
+.section {
+  padding: 5rem 0;
+}
+
+.sectionAlt {
+  background: var(--color-bg-alt);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.sectionLabel {
+  display: inline-block;
+  color: var(--color-brand);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-gray-900);
+  margin-bottom: 1rem;
+}
+
+.sectionDesc {
+  color: var(--color-gray-600);
+  font-size: 1.1rem;
+}
+
+/* About Grid */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .aboutGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
+
+.aboutText h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-gray-900);
+  margin-bottom: 1.5rem;
+}
+
+.aboutText p {
+  color: var(--color-gray-600);
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.aboutText p strong {
+  color: var(--color-gray-800);
+}
+
+.aboutImage {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.aboutImage img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.aboutImage:hover img {
+  transform: scale(1.03);
+}
+
+/* Values Grid */
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.valueCard {
+  background: var(--color-white);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid var(--color-border);
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-brand-light);
+}
+
+.valueIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  background: var(--color-brand-light);
+  color: var(--color-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+}
+
+.valueCard h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: 0.75rem;
+}
+
+.valueCard p {
+  color: var(--color-gray-600);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Branches Grid (Matches HomePage) */
+.branchGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.branchCard {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.branchCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.branchIcon {
+  color: var(--color-brand);
+  background: var(--color-brand-light);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  display: flex;
+}
+
+.branchInfo h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: 0.35rem;
+}
+
+.branchInfo p {
+  color: var(--color-gray-500);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.branchLink {
+  color: var(--color-brand);
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.branchLink:hover {
+  color: var(--color-brand-dark);
+}
