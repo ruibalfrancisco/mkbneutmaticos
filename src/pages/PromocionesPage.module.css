@@ -1,24 +1,89 @@
 .page {
-  padding: 2rem 0 4rem;
+  padding: 0 0 0;
   min-height: 60vh;
+  background-color: #ebebeb;
 }
 
-.pageHeader {
-  text-align: center;
-  margin-bottom: 3rem;
+/* ── Hero Banner ───────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 40%, #ef4444 100%);
+  color: white;
+  padding: 3rem 0;
+  margin-bottom: 2.5rem;
 }
 
-.pageTitle {
-  font-size: 2.4rem;
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.heroIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.3); }
+  50% { box-shadow: 0 0 0 12px rgba(255,255,255,0); }
+}
+
+.heroText {
+  flex: 1;
+}
+
+.heroTitle {
+  font-size: 2rem;
   font-weight: 800;
-  color: var(--color-text);
+  margin: 0 0 0.4rem;
   letter-spacing: -0.5px;
 }
 
-.pageSubtitle {
-  color: var(--color-gray-500);
+.heroSubtitle {
   font-size: 1.05rem;
-  margin-top: 0.5rem;
+  opacity: 0.92;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.heroSubtitle strong {
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.heroStat {
+  text-align: center;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.25rem 1.75rem;
+  backdrop-filter: blur(6px);
+}
+
+.heroStatNumber {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.heroStatLabel {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+  margin-top: 0.25rem;
+  display: block;
 }
 
 /* ── Section per type ───────────────────────── */
@@ -51,6 +116,12 @@
   padding: 0.2rem 0.55rem;
   border-radius: 99px;
   letter-spacing: 0.3px;
+  animation: badge-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
 .sliderControls {
@@ -75,7 +146,7 @@
 .sliderBtn:hover {
   border-color: var(--color-brand);
   color: var(--color-brand);
-  background: var(--color-brand-light, #fff5f5);
+  background: #fff5f5;
 }
 
 .sliderBtn:disabled {
@@ -92,8 +163,6 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 0.5rem 0.25rem 1rem;
-
-  /* Hide scrollbar */
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -104,8 +173,138 @@
 
 .sliderTrack > * {
   scroll-snap-align: start;
-  flex: 0 0 280px;
-  min-width: 280px;
+  flex: 0 0 300px;
+  min-width: 300px;
+}
+
+/* ── Brands Strip ───────────────────────────── */
+.brands {
+  background: var(--color-gray-100, #f1f5f9);
+  padding: 2.5rem 0;
+  margin-top: 1rem;
+}
+
+.brandsLabel {
+  text-align: center;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-gray-400);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.brandsGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+}
+
+.brandItem:hover {
+  transform: scale(1.08);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.brandLogo {
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: all 0.3s ease;
+}
+
+.firestoneLogo {
+  height: 65px;
+  border-radius: 4px; /* Slight rounding to the red block */
+}
+
+.bridgestoneLogo {
+  height: auto;
+  width: 330px; /* Made even bigger horizontally as requested */
+  transform: translateY(2px);
+}
+
+.brandItem:hover .brandLogo {
+  filter: grayscale(0%);
+}
+
+/* ── CTA Section ────────────────────────────── */
+.cta {
+  background: linear-gradient(135deg, var(--color-text) 0%, #1e293b 100%);
+  padding: 3rem 0;
+  color: white;
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.ctaTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 0.3rem;
+}
+
+.ctaText {
+  opacity: 0.8;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.ctaPrimary {
+  background: #25d366;
+  color: white;
+}
+
+.ctaPrimary:hover {
+  background: #1fb855;
+  transform: translateY(-1px);
+}
+
+.ctaSecondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ctaSecondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
 }
 
 /* ── Empty / loading ────────────────────────── */
@@ -141,12 +340,40 @@
 
 /* ── Responsive ─────────────────────────────── */
 @media (max-width: 768px) {
-  .pageTitle {
-    font-size: 1.8rem;
+  .heroInner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+
+  .heroStat {
+    padding: 1rem 1.5rem;
   }
 
   .sliderTrack > * {
     flex: 0 0 260px;
     min-width: 260px;
+  }
+
+  .ctaInner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    justify-content: center;
+  }
+
+  .brandsGrid {
+    gap: 1.5rem;
   }
 }

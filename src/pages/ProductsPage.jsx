@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import Fuse from 'fuse.js';
 import {
   Search, SlidersHorizontal, ArrowUpDown,
-  Tag, RotateCcw, CircleSlash, Loader2
+  Tag, RotateCcw, CircleSlash, Loader2, MessageCircle, Phone, Truck
 } from 'lucide-react';
 
 import { getProducts } from '../services/api';
@@ -138,6 +138,8 @@ function ProductsPage() {
             Encontrá {selectedType === 'Baterías' ? 'la batería perfecta' : selectedType === 'Accesorios' ? 'el accesorio perfecto' : 'el neumático perfecto'} para tu vehículo
           </p>
         </div>
+
+
 
         <div className={styles.layout}>
 
@@ -286,6 +288,26 @@ function ProductsPage() {
 
         </div>
       </div>
+
+      {/* CTA Section */}
+      <section className={styles.cta}>
+        <div className="container">
+          <div className={styles.ctaInner}>
+            <div>
+              <h3 className={styles.ctaTitle}>¿Necesitás ayuda para elegir?</h3>
+              <p className={styles.ctaText}>Nuestros expertos te asesoran sin compromiso.</p>
+            </div>
+            <div className={styles.ctaButtons}>
+              <a href="https://wa.me/+543516106116" target="_blank" rel="noopener noreferrer" className={styles.ctaPrimary}>
+                <MessageCircle size={17} /> WhatsApp
+              </a>
+              <a href="tel:+543516106116" className={styles.ctaSecondary}>
+                <Phone size={17} /> Llamanos
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

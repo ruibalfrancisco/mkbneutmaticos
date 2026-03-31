@@ -1,8 +1,9 @@
 /* ProductsPage.module.css */
 
 .page {
-  padding: 2.5rem 0 4rem;
+  padding: 2.5rem 0 0;
   min-height: calc(100vh - var(--nav-height));
+  background-color: #ebebeb;
 }
 
 /* Page header */
@@ -253,4 +254,89 @@
 .noResults p {
   font-size: 0.9rem;
   color: var(--color-text-muted);
+}
+
+
+
+/* ── CTA Section ────────────────────────────── */
+.cta {
+  background: linear-gradient(135deg, var(--color-text) 0%, #1e293b 100%);
+  padding: 3rem 0;
+  color: white;
+  margin-top: 3rem;
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.ctaTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 0.3rem;
+}
+
+.ctaText {
+  opacity: 0.8;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.ctaPrimary {
+  background: #25d366;
+  color: white;
+}
+
+.ctaPrimary:hover {
+  background: #1fb855;
+  transform: translateY(-1px);
+}
+
+.ctaSecondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ctaSecondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .ctaInner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .ctaPrimary,
+  .ctaSecondary {
+    justify-content: center;
+  }
 }
